@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_style %}
+<link rel="stylesheet" href="{% static 'css/index-style.css' %}">
+{% endblock %}
+
+
+{% block html_body_content %}
+<section>
+    <div class="login-dark" style="background-image: url('{% static "image/bg4.jpg" %}')">
+    <div id="tint">
+
+        <form method="post" id="login-form" action="{% url 'account:login' %}">
+            {% csrf_token %}
+            <h4 class="font-weight-bold">
+              <span
+                 class="txt-rotate"
+                 data-period="2000"
+                 data-rotate='[ "Hello!", "Ẹ n lẹ!", "Sannu!", "Nnọọ!", "Bonjour!" ]'></span>
+            </h4>
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Email / Username" required></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
+            <div class="form-group"><button id="login-btn" class="btn btn-primary btn-block" type="submit">Log In</button></div><a href="{% url 'account:password_reset' %}" class="forgot">Forgot your email or password?</a></form>
+    </div>
+    </div>
+</section>
+{% endblock %}
