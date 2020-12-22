@@ -13,7 +13,11 @@ def search_view(request):
         SearchQuery.objects.create(user=user, query=query)
         queryset = CrimeRecord.objects.search(query=query)
 
-        context = {'queryset': queryset, 'query': query,}
+        context = {
+            'queryset': queryset,
+            'query': query,
+            'section': 'search'
+                   }
 
     return render(request, 'searches/view.html', context)
 

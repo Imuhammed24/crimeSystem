@@ -9,4 +9,15 @@ def crime_list_view(request):
         'html_title': 'EXPLORE RECORDS',
         'section': 'explore',
     }
-    return render(request, 'crime_records/list.html', context)
+    return render(request, 'crime_records/explore-all.html', context)
+
+
+def crime_detail_view(request, record_id):
+    record = CrimeRecord.objects.get(id=record_id)
+    context = {
+        'record': record,
+        'html_title': 'RECORD DEATIL VIEW',
+        'section': 'detail',
+    }
+    return render(request, 'crime_records/record/detail.html', context)
+

@@ -4,16 +4,18 @@
 {% block html_body_content %}
 
 {% include 'header.html' %}
-<section class="d-block overflow-hidden p-3">
-    <div class="content-div">
+<section class="d-block overflow-hidden">
+    <div class="content-div-explore">
             {% if query %}
             <p class="lead">You searched for '{{ query }}'</p>
+                {% include 'crime_records/list.html' with records=queryset %}
             {% else %}
-            <form class="form-inline my-2 my-lg-0" action=".">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              <form id="search-form" action="{% url 'searches:search_view' %}">
+                <p class="text-danger">Invalid search, Enter a keyword to search for</p>
+                <input id="search-bar" placeholder="Search..." type="search" name="q">
+                <small class="text-muted d-block mb-3">You can search by name, date, bvn, or description</small>
+                <button class="btn btn-primary" type="submit">Search</button>
             </form>
-            <br>
             {% endif %}
     </div>
 </section>{% include 'footer.html' %}

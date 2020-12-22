@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block html_body_content %}
+
+{% include 'header.html' %}
+<section class="d-block overflow-hidden">
+    <div id="left-div" class="content-div">`</div>
+    <div id="middle-div" class="content-div">
+        <div id="profile-header" class="p-3">
+            <div>
+                <img id="main-profile-pic" src="{{ record.passport.url}}" alt="">
+                <div id="user-detail" class="d-inline ">
+                    <span class="user-detail-span"> <h5 class="d-inline">Name: </h5> <strong class="">{{record.first_name.title}} {{record.last_name.title}} {{record.middle_name.title}}</strong></span>
+                    <span class="user-detail-span"> <h5 class="d-inline">Date of Birth: </h5> <strong class="">{{record.date_of_birth}}</strong></span>
+                    <span class="user-detail-span"> <h5 class="user-detail-span d-inline">State: </h5> <strong class="">{{record.state_of_origin.title}}</strong></span>
+                    <span class="user-detail-span"> <h5 class="user-detail-span d-inline">Nationality: </h5> <strong class="">{{record.nationality.title}}</strong></span>
+                    <span class="user-detail-span"> <h5 class="user-detail-span d-inline">BVN: </h5> <strong class="">{{record.BVN}}</strong></span>
+                </div>
+                <div id="offender-case-section" class="d-block">
+                    pppp
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="right-div" class="content-div">`</div>
+</section>
+{% include 'footer.html' %}
+
+{% endblock %}

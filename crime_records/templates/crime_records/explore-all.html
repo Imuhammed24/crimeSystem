@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block html_body_content %}
+
+{% include 'header.html' %}
+<section class="d-block overflow-hidden">
+    <div class="content-div-explore">
+        {% include 'crime_records/list.html' %}
+    </div>
+</section>
+{% include 'footer.html' %}
+
+{% endblock %}

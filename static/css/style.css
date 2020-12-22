@@ -1,8 +1,12 @@
+h1,h2,h3,h4,h5,h6,p,a,small{
+    font-family: kanit;
+}
+
 #site-header{
     height: 10vh;
     background-color: black;
     color: white;
-    padding: 20px 10px;
+    padding: 20px 15px;
     overflow: hidden;
     border-radius: 0 0 0 50px;
 }
@@ -30,7 +34,7 @@
 .content-div{
     display: inline;
     float: left;
-    height: 78vh;
+    height: 82vh;
     overflow: scroll;
 }
 
@@ -95,4 +99,35 @@
 
 #record-table thead tr th{
     padding: 10px 15px;
+}
+
+#profile-header{
+    /*box-shadow: 0 0 10px #cbcbcb;*/
+    /*box-shadow: 0 0 10px red;*/
+     border: 3px solid #dddddd;
+     box-shadow:  0 0 10px  #cbcbcb;
+      -moz-box-shadow: 0 0 10px #cbcbcb;
+      -webkit-box-shadow: 0 0 10px  #cbcbcb;
+      -o-box-shadow: 0 0 10px #cbcbcb;
+    overflow: hidden;
+}
+
+#main-profile-pic{
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+}
+
+
+#user-detail{
+    width: 60%;
+    margin: 50px 0 0 10px;
+    float: left;
+}
+
+
+.user-detail-span{
+    display: inline-table;
+    width: 100%;
+    margin-bottom: 5px;
 }
