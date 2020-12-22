@@ -1,11 +1,12 @@
 from django.urls import path, reverse_lazy
 from django.contrib.auth import views as auth_views
-from .views import home_view, login_view
+from .views import home_view, login_view, logout_view
 
 
 urlpatterns = [
     path('', home_view, name='home'),
     path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
 
     path('password-change/', auth_views.PasswordChangeView.as_view(
         template_name='registration/password_change_form.html',

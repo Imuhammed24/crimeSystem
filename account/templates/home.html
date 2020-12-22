@@ -1,1 +1,25 @@
-<h1>HOME</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block html_body_content %}
+{% include 'header.html' %}
+
+<section class="d-block overflow-hidden">
+    <div class="content-div" id="left-div"> `</div>
+    <div class="content-div" id="middle-div">
+<!--        <center>-->
+            <form id="search-form" action="{% url 'searches:search_view' %}">
+                <h1 class="font-weight-bold mb-5 text-dark">Crime Report System</h1>
+                <input id="search-bar" placeholder="Search..." type="search" name="q">
+                <small class="text-muted d-block">You can search by name, date, bvn, or description</small>
+                <br>
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+<!--        </center>-->
+    </div>
+    <div class="content-div" id="right-div"> </div>
+</section>
+
+{% include 'footer.html' %}
+
+{% endblock %}

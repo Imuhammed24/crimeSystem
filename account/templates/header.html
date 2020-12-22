@@ -1,0 +1,8 @@
+{% load static %}
+
+<header id="site-header" {% if section == 'explore' %}style="border-radius: unset"{% endif %}>
+    <ul id="nav-bar-ul" class="m-0">
+        <li class="list-unstyled d-inline font-weight-bold">Hello, {{request.user.username.title}}</li>
+<!--        <li class="list-unstyled d-inline"><a href="" class="text-white">logout</a></li>-->
+    </ul>
+</header>

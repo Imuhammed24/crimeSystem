@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     'crime_records',
+    'searches',
 ]
 
 MIDDLEWARE = [
@@ -60,6 +61,7 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'account/templates'),
             os.path.join(BASE_DIR, 'crime_records/templates'),
+            os.path.join(BASE_DIR, 'searches/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {

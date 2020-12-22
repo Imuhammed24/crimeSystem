@@ -1,13 +1,13 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 
 # Create your views here.
+@login_required(login_url='/')
 def home_view(request):
-    context = {
-        'page_title': 'WELCOME HOME'
-    }
+    context = {'html_title': 'WELCOME HOME'}
     return render(request, 'home.html', context)
 
 def login_view(request):
@@ -35,3 +35,7 @@ def login_view(request):
     return
 
 
+@login_required()
+def logout_view(request):
+    logout(request)
+    return redirect('account:home')
