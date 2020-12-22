@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from crime_records.models import CrimeRecord
 
 
@@ -14,6 +14,17 @@ def crime_list_view(request):
 
 def crime_detail_view(request, record_id):
     record = CrimeRecord.objects.get(id=record_id)
+    context = {
+        'record': record,
+        'html_title': 'RECORD DEATIL VIEW',
+        'section': 'detail',
+    }
+    return render(request, 'crime_records/record/detail.html', context)
+
+
+def delete_crime_view(request, record_id):
+    record = get_object_or_404(CrimeRecord, id=record_id)
+    record.delete()
     context = {
         'record': record,
         'html_title': 'RECORD DEATIL VIEW',

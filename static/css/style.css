@@ -102,6 +102,7 @@ h1,h2,h3,h4,h5,h6,p,a,small{
 }
 
 #profile-header{
+    display: block;
     /*box-shadow: 0 0 10px #cbcbcb;*/
     /*box-shadow: 0 0 10px red;*/
      border: 3px solid #dddddd;
@@ -120,8 +121,9 @@ h1,h2,h3,h4,h5,h6,p,a,small{
 
 
 #user-detail{
-    width: 60%;
-    margin: 50px 0 0 10px;
+    /*width: 80%;*/
+    display: block;
+    margin: 35px 0 0 10px;
     float: left;
 }
 
@@ -130,4 +132,18 @@ h1,h2,h3,h4,h5,h6,p,a,small{
     display: inline-table;
     width: 100%;
     margin-bottom: 5px;
+}
+
+.offender-description{
+    display: inline-table;
+}
+
+div.description_p{
+    width: 89%;
+    padding: 0 5px;
+}
+
+#profile-date-section{
+    float: right;
+    margin-top: 50px;
 }

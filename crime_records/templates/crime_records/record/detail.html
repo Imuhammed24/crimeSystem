@@ -8,7 +8,7 @@
     <div id="left-div" class="content-div">`</div>
     <div id="middle-div" class="content-div">
         <div id="profile-header" class="p-3">
-            <div>
+            <div class="overflow-hidden">
                 <img id="main-profile-pic" src="{{ record.passport.url}}" alt="">
                 <div id="user-detail" class="d-inline ">
                     <span class="user-detail-span"> <h5 class="d-inline">Name: </h5> <strong class="">{{record.first_name.title}} {{record.last_name.title}} {{record.middle_name.title}}</strong></span>
@@ -17,13 +17,26 @@
                     <span class="user-detail-span"> <h5 class="user-detail-span d-inline">Nationality: </h5> <strong class="">{{record.nationality.title}}</strong></span>
                     <span class="user-detail-span"> <h5 class="user-detail-span d-inline">BVN: </h5> <strong class="">{{record.BVN}}</strong></span>
                 </div>
-                <div id="offender-case-section" class="d-block">
-                    pppp
+                <div id="profile-date-section">
+                    <span class="mr-3"> <small class="d-inline text-primary">Date Created: </small> <strong class="text-muted small">{{record.created}}</strong></span>
+                    <span class=""> <small class="d-inline text-primary">Last Mofified: </small> <strong class="text-muted small">{{record.modified}}</strong></span>
                 </div>
             </div>
+            <hr>
+            <div id="offender-case-section" class="d-block mt-3 overflow-hidden">
+                 <span class="d-block overflow-hidden">
+                     <div class="offender-description float-left"><h5 class="d-inline font-weight-bold">Descripton:</h5></div>
+                     <div class="offender-description description_p float-right"><p class="d-inline">{{record.description|linebreaks}}</p></div>
+                 </span>
+                 <span class="d-block overflow-hidden mt-3">
+                     <div class="offender-description float-left"><h5 class="d-inline font-weight-bold">Extra Note:</h5></div>
+                     <div class="offender-description description_p float-right"><p class="d-inline text-muted">{{record.extra_note|linebreaks}}</p></div>
+                 </span>
+            </div>
         </div>
+<!--        <div id="right-div" class="content-div">`</div>-->
     </div>
-    <div id="right-div" class="content-div">`</div>
+
 </section>
 {% include 'footer.html' %}
 
