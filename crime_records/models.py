@@ -41,7 +41,7 @@ class CrimeRecord(models.Model):
     nationality = models.CharField(max_length=40, default='Nigeria')
     BVN = models.CharField(max_length=10)
     description = models.TextField()
-    extra_note = models.CharField(max_length=300)
+    extra_note = models.CharField(max_length=300, null=True, blank=True)
     modified = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 

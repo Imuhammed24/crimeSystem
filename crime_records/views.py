@@ -1,13 +1,18 @@
-from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
+from django.shortcuts import render, get_object_or_404, redirect
+
+from crime_records.forms import CrimeRecordForm
 from crime_records.models import CrimeRecord
 
 
 def crime_list_view(request):
     records = CrimeRecord.objects.all()
+    crime_record_form = CrimeRecordForm()
     context = {
         'records': records,
         'html_title': 'EXPLORE RECORDS',
         'section': 'explore',
+        'add_record_form': crime_record_form
     }
     return render(request, 'crime_records/explore-all.html', context)
 
@@ -25,11 +30,14 @@ def crime_detail_view(request, record_id):
 def delete_crime_view(request, record_id):
     record = get_object_or_404(CrimeRecord, id=record_id)
     record.delete()
-    records = CrimeRecord.objects.all()
-    context = {
-        'records': records,
-        'html_title': 'EXPLORE RECORDS',
-        'section': 'explore',
-    }
-    return render(request, 'crime_records/explore-all.html', context)
+    return redirect('crime_records:crime_list')
+
+
+def add_crime_record_view(request):
+    if request.method == 'POST':
+        form = CrimeRecordForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Added Successfully!")
+    return redirect('crime_records:crime_list')
 

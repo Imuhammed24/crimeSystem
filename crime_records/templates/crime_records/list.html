@@ -32,7 +32,7 @@
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.created}}</a></td>
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.modified}}</a></td>
               <td><a class="btn btn-primary">edit</a></td>
-              <td><a href="{% url 'crime_records:delete_crime_record' record.id %}" onclick="confirm('Do you want to delete this record?')" class="btn btn-danger">delete</a></td>
+              <td><a href="{% url 'crime_records:delete_crime_record' record.id %}" onclick="if (! confirm('Do you want to delete this record?')) { return false; }" class="btn btn-danger">delete</a></td>
               {% empty %}
               <td colspan="13" align="center"><h2>No record</h2></td>
               </tr>

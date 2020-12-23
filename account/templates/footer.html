@@ -6,6 +6,9 @@
             <li class="list-unstyled d-inline mr-2 text-white"><a {% if request.user.is_authenticated %} href="{% url 'account:home' %}" {% else%} href="/" {% endif %} class="text-white">Home</a></li>
             <li class="list-unstyled d-inline mr-2 text-white"><a href="{% url 'crime_records:crime_list' %}" class="text-white">Explore</a></li>
             <li class="list-unstyled d-inline mr-2 text-white"><a href="" class="text-white">Logout</a></li>
+            {% if section == 'explore' %}
+            <li class="list-unstyled d-inline"><button type="button" data-toggle="modal" data-target="#exampleModalLong" class="text-white btn btn-secondary">Add Record</button></li>
+            {% endif %}
         </ul>
     </center>
 </footer>

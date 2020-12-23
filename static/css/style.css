@@ -143,7 +143,30 @@ div.description_p{
     padding: 0 5px;
 }
 
-#profile-date-section{
+#profile-date-section {
     float: right;
     margin-top: 50px;
+}
+
+#add-record-form p label{
+    display: block;
+}
+
+
+#add-record-form p input, #add-record-form p textarea{
+    border: unset;
+    padding: 10px;
+    background-color: #ececec;
+    border-radius: 30px;
+    transition: .9s;
+}
+
+#add-record-form p input:hover, #add-record-form p textarea:hover{
+    background-color: white;
+    border: 2px solid black;
+}
+
+#add-record-form p input:focus, #add-record-form p textarea:focus{
+    border: 2px solid black;
+    outline: none;
 }
