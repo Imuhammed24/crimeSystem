@@ -33,6 +33,21 @@ def delete_crime_view(request, record_id):
     return redirect('crime_records:crime_list')
 
 
+def edit_crime_view(request, record_id):
+    record = get_object_or_404(CrimeRecord, id=record_id)
+    form = CrimeRecordForm(request.POST or None, request.FILES or None, instance=record)
+    if form.is_valid():
+        form.save()
+        return redirect('crime_records:crime_list')
+    context = {
+        'record': record,
+        'html_title': 'EDIT RECORD',
+        'section': 'edit',
+        'edit_record_form': form,
+    }
+    return render(request, 'crime_records/record/edit.html', context)
+
+
 def add_crime_record_view(request):
     if request.method == 'POST':
         form = CrimeRecordForm(request.POST or None, request.FILES or None)
