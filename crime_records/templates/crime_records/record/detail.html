@@ -6,10 +6,10 @@
 {% include 'header.html' %}
 <section class="d-block overflow-hidden">
     <div id="left-div" class="content-div">`</div>
-    <div id="middle-div" class="content-div">
+    <div id="middle-div" class="content-div bg-white">
         <div id="profile-header" class="p-3">
             <div class="overflow-hidden">
-                <img id="main-profile-pic" src="{{ record.passport.url}}" alt="">
+                <a href="{{ record.passport.url }}"><img id="main-profile-pic" src="{{ record.passport.url }}" alt=""></a>
                 <div id="user-detail" class="d-inline ">
                     <span class="user-detail-span"> <h5 class="d-inline">Name: </h5> <strong class="">{{record.first_name.title}} {{record.last_name.title}} {{record.middle_name.title}}</strong></span>
                     <span class="user-detail-span"> <h5 class="d-inline">Date of Birth: </h5> <strong class="">{{record.date_of_birth}}</strong></span>

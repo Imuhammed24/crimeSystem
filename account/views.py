@@ -5,9 +5,15 @@ from django.shortcuts import render, redirect
 
 
 # Create your views here.
+from crime_records.forms import CrimeRecordForm
+
+
 @login_required(login_url='/')
 def home_view(request):
-    context = {'html_title': 'WELCOME HOME'}
+    crime_record_form = CrimeRecordForm()
+    context = {'html_title': 'WELCOME HOME',
+               'add_record_form': crime_record_form,
+               }
     return render(request, 'home.html', context)
 
 def login_view(request):

@@ -19,9 +19,11 @@ def crime_list_view(request):
 
 def crime_detail_view(request, record_id):
     record = CrimeRecord.objects.get(id=record_id)
+    crime_record_form = CrimeRecordForm()
     context = {
         'record': record,
         'html_title': 'RECORD DEATIL VIEW',
+        'add_record_form': crime_record_form,
         'section': 'detail',
     }
     return render(request, 'crime_records/record/detail.html', context)

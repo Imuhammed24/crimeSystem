@@ -56,7 +56,7 @@ h1,h2,h3,h4,h5,h6,p,a,small{
     transition: .9s;
 }
 
-#search-bar:focus{
+#search-bar:focus, #search-bar:hover{
     outline: none;
     background-color: white;
     /*border: 3px solid #0275d8;*/
@@ -101,6 +101,10 @@ h1,h2,h3,h4,h5,h6,p,a,small{
     padding: 10px 15px;
 }
 
+#record-table tbody tr:hover{
+    opacity: .5;
+}
+
 #profile-header{
     display: block;
     /*box-shadow: 0 0 10px #cbcbcb;*/
@@ -114,6 +118,8 @@ h1,h2,h3,h4,h5,h6,p,a,small{
 }
 
 #main-profile-pic{
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     overflow: hidden;
     float: left;
@@ -123,7 +129,7 @@ h1,h2,h3,h4,h5,h6,p,a,small{
 #user-detail{
     /*width: 80%;*/
     display: block;
-    margin: 35px 0 0 10px;
+    margin: 5px 0 0 10px;
     float: left;
 }
 

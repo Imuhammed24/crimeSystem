@@ -2,16 +2,15 @@
 
 <header id="site-header" {% if section == 'explore' or section == 'search' or section == 'detail' %}style="border-radius: unset"{% endif %}>
     {% if section == 'explore' %}
-    <h2 class="d-inline font-weight-bold">Explore Crime Records</h2>
+    <h3 class="d-inline font-weight-bold">Explore Crime Records</h3>
     {% else %}
-    <h2 class="d-inline font-weight-bold">Crime Record System</h2>
+    <h3 class="d-inline font-weight-bold">Crime Record System</h3>
     {% endif %}
     <ul id="nav-bar-ul" class="m-0">
         <li class="list-unstyled d-inline font-weight-bold text-white-50 mr-4">Hello, {{request.user.username.title}}</li>
         <li class="list-unstyled d-inline mr-2"><a {% if request.user.is_authenticated %} href="{% url 'account:home' %}" {% else%} href="/" {% endif %} class="text-white">Home</a></li>
-        <li class="list-unstyled d-inline"><a href="" class="text-white">logout</a></li>
-        {% if section == 'explore' %}
+        <li class="list-unstyled d-inline"><a href="{% url 'account:logout' %}" class="text-white">logout</a></li>
         <li class="list-unstyled d-inline"><button type="button" data-toggle="modal" data-target="#exampleModalLong" class="text-white btn btn-secondary">Add Record</a></li>
-        {% endif %}
     </ul>
+    <!-- Modal -->
 </header>

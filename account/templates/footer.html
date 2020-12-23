@@ -6,9 +6,32 @@
             <li class="list-unstyled d-inline mr-2 text-white"><a {% if request.user.is_authenticated %} href="{% url 'account:home' %}" {% else%} href="/" {% endif %} class="text-white">Home</a></li>
             <li class="list-unstyled d-inline mr-2 text-white"><a href="{% url 'crime_records:crime_list' %}" class="text-white">Explore</a></li>
             <li class="list-unstyled d-inline mr-2 text-white"><a href="" class="text-white">Logout</a></li>
-            {% if section == 'explore' %}
             <li class="list-unstyled d-inline"><button type="button" data-toggle="modal" data-target="#exampleModalLong" class="text-white btn btn-secondary">Add Record</button></li>
-            {% endif %}
         </ul>
     </center>
+<!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Add Crime Record</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form id="add-record-form" enctype="multipart/form-data" action="{% url 'crime_records:add_crime_record' %}" method="post">
+                  {% csrf_token %}
+                  {{ add_record_form.as_p }}
+                  <button type="submit" class="btn btn-success">Save</button>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
 </footer>
