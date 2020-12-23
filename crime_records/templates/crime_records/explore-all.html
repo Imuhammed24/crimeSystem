@@ -4,6 +4,15 @@
 {% block html_body_content %}
 
 {% include 'header.html' %}
+
+{% if messages %}
+    {% for message in messages %}
+     {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+    {% endfor %}
+
+{% endif %}
+
 <section class="d-block overflow-hidden">
     <div class="content-div-explore">
         {% include 'crime_records/list.html' %}

@@ -6,7 +6,7 @@ h1,h2,h3,h4,h5,h6,p,a,small{
     height: 10vh;
     background-color: black;
     color: white;
-    padding: 20px 15px;
+    padding: 20px;
     overflow: hidden;
     border-radius: 0 0 0 50px;
 }

@@ -38,6 +38,7 @@ def edit_crime_view(request, record_id):
     form = CrimeRecordForm(request.POST or None, request.FILES or None, instance=record)
     if form.is_valid():
         form.save()
+        messages.success(request, "Edited Successfully!")
         return redirect('crime_records:crime_list')
     context = {
         'record': record,
@@ -55,4 +56,3 @@ def add_crime_record_view(request):
             form.save()
             messages.success(request, "Added Successfully!")
     return redirect('crime_records:crime_list')
-
