@@ -120,16 +120,21 @@ h1,h2,h3,h4,h5,h6,p,a,small{
 #main-profile-pic{
     height: 100px;
     width: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    float: left;
+    border-radius: 5%;
+}
+
+#user-profile-image-div{
+    float: right;
+    width: 10%;
 }
 
 
 #user-detail{
-    /*width: 80%;*/
-    display: block;
+    width: 85%;
+    display: inline;
     margin: 5px 0 0 10px;
+    overflow: hidden;
+    padding: 0 10px;
     float: left;
 }
 
@@ -151,7 +156,8 @@ div.description_p{
 
 #profile-date-section {
     float: right;
-    margin-top: 50px;
+    margin-top: 3px;
+    overflow: hidden;
 }
 
 #add-record-form p label{
@@ -175,4 +181,18 @@ div.description_p{
 #add-record-form p input:focus, #add-record-form p textarea:focus{
     border: 2px solid black;
     outline: none;
+}
+
+#user-profile-table{
+    /*border: 3px solid #cfcfcf;*/
+    /*margin-top: 0;*/
+}
+
+#user-profile-table tbody tr td{
+    padding: 2px;
+}
+
+.table-title-space{
+    /*margin-left: 10em;*/
+    display: block;
 }
