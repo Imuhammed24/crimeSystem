@@ -100,9 +100,8 @@ h1,h2,h3,h4,h5,h6,p,a,small{
 #record-table thead tr th{
     padding: 10px 15px;
 }
-
-#record-table tbody tr:hover{
-    opacity: .5;
+#record-table thead tr td{
+    padding: 0 15px;
 }
 
 #profile-header{
@@ -118,23 +117,24 @@ h1,h2,h3,h4,h5,h6,p,a,small{
 }
 
 #main-profile-pic{
-    height: 100px;
-    width: 100px;
+    height: 130px;
+    width: 130px;
     border-radius: 5%;
 }
 
 #user-profile-image-div{
-    float: right;
-    width: 10%;
+    float: left;
+    overflow: hidden;
+    width: 13%;
 }
 
 
 #user-detail{
-    width: 85%;
+    width: 87%;
     display: inline;
     margin: 5px 0 0 10px;
     overflow: hidden;
-    padding: 0 10px;
+    padding: 0 0 0 10px;
     float: left;
 }
 
@@ -150,7 +150,7 @@ h1,h2,h3,h4,h5,h6,p,a,small{
 }
 
 div.description_p{
-    width: 89%;
+    width: 85%;
     padding: 0 5px;
 }
 
@@ -189,10 +189,15 @@ div.description_p{
 }
 
 #user-profile-table tbody tr td{
-    padding: 2px;
+    padding: 1px;
 }
 
 .table-title-space{
     /*margin-left: 10em;*/
     display: block;
 }
+
+#sentence-info{
+    padding: 0 25px;
+}
+

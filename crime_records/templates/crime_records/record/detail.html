@@ -1,15 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block html_body_content %}
+{% block extra_style %}
+<style>
+    .content-div{
+        height: 90vh;
+    }
+    #middle-div{
+        width: 65%;
+    }
+    #right-div, #left-div{
+        width: 17.5%;
+    }
+</style>
+{% endblock %}
 
+{% block html_body_content %}
+{% if messages %}
+    {% for message in messages %}
+     {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+    {% endfor %}
+
+{% endif %}
 {% include 'header.html' %}
 <section class="d-block overflow-hidden">
     <div id="left-div" class="content-div">`</div>
     <div id="middle-div" class="content-div bg-white">
         <div id="profile-header" class="p-3">
-            <h3 class="p-3"><u>DETAILED CRIME RECORD</u></h3>
+            <center><h3 class="p-3 font-weight-bold"><u>DETAILED CRIME RECORD</u></h3></center>
+            <br>
+
             <div class="overflow-hidden">
+                <h6 class="font-weight-bold">Profile Information</h6>
+                <hr>
                 <div id="user-profile-image-div" class="d-inline">
                     <a href="{{ record.passport.url }}"><img id="main-profile-pic" src="{{ record.passport.url }}" alt=""></a>
                 </div>
@@ -26,7 +50,7 @@
                       <tbody>
                         <tr>
                           <td><span class="user-detail-span"> <small class="d-inline">Date of Birth: </small> <strong class="table-title-space">{{record.date_of_birth}}</strong></span></td>
-                          <td><span class="user-detail-span"> <small class="d-inline">Age: </small> <strong class="table-title-space">{{record.date_of_birth}}</strong></span></td>
+                          <td><span class="user-detail-span"> <small class="d-inline">Age: </small> <strong class="table-title-space">---</strong></span></td>
                           <td></td>
                         </tr>
                         <tr>
@@ -37,26 +61,56 @@
                         <tr>
                           <td><span><small class="user-detail-span d-inline">Hair Colour: </small> <strong class="table-title-space">{{record.hair_colour}}</strong></span></td>
                           <td><span><small class="user-detail-span d-inline">Eye Colour: </small> <strong class="table-title-space">{{record.eye_colour}}</strong></span></td>
+                          <td></td>
                         </tr>
                         <tr>
                           <td><span><small class="user-detail-span d-inline">Gender: </small> <strong class="table-title-space">{{record.sex}}</strong></span></td>
                           <td><span><small class="user-detail-span d-inline">Marital Status: </small> <strong class="table-title-space">{{record.marital}}</strong></span></td>
+                          <td></td>
                         </tr>
                         <tr>
                           <td><span><small class="user-detail-span d-inline">Height: </small> <strong class="table-title-space">{{record.height}}</strong></span></td>
                           <td><span><small class="user-detail-span d-inline">Weight: </small> <strong class="table-title-space">{{record.weight}}</strong></span></td>
+                          <td></td>
                         </tr>
                       </tbody>
                     </table>
                 </div>
                 </div>
-                <div id="profile-date-section">
-                    <span class="mr-3"> <small class="d-inline text-primary">Date Created: </small> <strong class="text-muted small">{{record.created}}</strong></span><br>
-                    <span class=""> <small class="d-inline text-primary">Last Mofified: </small> <strong class="text-muted small">{{record.modified}}</strong></span>
-                </div>
+
+                <br>
+                <br>
+                <br>
                 <div id="sentence-info" class="overflow-hidden">
-                    <h6 class="font-weight-bold">Arrest & Sentence Info</h6>
+                    <h6 class="font-weight-bold">Arrest & Sentence Information</h6>
                     <hr>
+                    <table class="table table-striped table-sm table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Date</th>
+                      <th scope="col">Offence</th>
+                          <th scope="col">Entity (offended)</th>
+                          <th scope="col">Charge</th>
+                          <th scope="col">Term</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for case in cases %}
+                        <tr>
+                          <td>{{ case.date }}</td>
+                          <td>{{ case.offence }}</td>
+                          <td>{{ case.entity }}</td>
+                          <td>{{ case.charge }}</td>
+                          <td>{{ case.term }}</td>
+                            {% empty %}
+                          <td colspan="5"><center>No record yet</center></td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                    {% if request.user.is_staff %}
+                    <a class="btn btn-primary" href="{% url 'crime_records:add_sentence' record.id %}">add sentence</a>
+                    {% endif %}
                 </div>
             </div>
             <hr>
@@ -71,6 +125,6 @@
     </div>
 
 </section>
-{% include 'footer.html' %}
+<!--{% include 'footer.html' %}-->
 
 {% endblock %}

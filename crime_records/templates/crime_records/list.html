@@ -1,8 +1,8 @@
 {% load static %}
-<table id="record-table" class="table table-striped table-dark">
+<table id="record-table" class="table table-hover table-sm table-striped table-dark">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">s/n</th>
               <th scope="col">First_Name</th>
               <th scope="col">Last_Name</th>
               <th scope="col">Middle_Name</th>
@@ -13,8 +13,10 @@
               <th scope="col">BVN</th>
               <th scope="col">Date_Added</th>
               <th scope="col">Last_Modified</th>
+              {% if request.user.is_staff %}
               <th scope="col">Edit</th>
               <th scope="col">Delete</th>
+              {% endif %}
             </tr>
           </thead>
           <tbody>
@@ -31,8 +33,10 @@
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.BVN}}</a></td>
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.created}}</a></td>
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.modified}}</a></td>
+              {% if request.user.is_staff %}
               <td><a href="{% url 'crime_records:edit_crime_record' record.id %}" class="btn btn-primary">edit</a></td>
               <td><a href="{% url 'crime_records:delete_crime_record' record.id %}" onclick="if (! confirm('Do you want to delete this record?')) { return false; }" class="btn btn-danger">delete</a></td>
+              {% endif %}
               {% empty %}
               <td colspan="13" align="center"><h2>No record</h2></td>
               </tr>

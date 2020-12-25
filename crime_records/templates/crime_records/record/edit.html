@@ -4,13 +4,13 @@
 {% block html_body_content %}
 
 <section class="d-block overflow-hidden">
-    <div id="left-div" {% if section == 'edit' %}style="width:30%"{% endif %} class="content-div">`</div>
-    <div id="middle-div" {% if section == 'edit' %}style="width:40%; height:100vh; border: 3px solid lightgray; padding: 8px;"{% endif %} class="content-div">
-        <h3 class="font-weight-bold d-inline mb-3">Edit Record</h3> <a class="btn btn-primary float-right" href="{% url 'crime_records:crime_list' %}">Back</a>
+    <div id="left-div" {% if section == 'edit' or section == 'add' %}style="width:30%"{% endif %} class="content-div">`</div>
+    <div id="middle-div" {% if section == 'edit' or section == 'add' %}style="width:40%; height:100vh; border: 3px solid lightgray; padding: 8px;"{% endif %} class="content-div">
+        <h3 class="font-weight-bold d-inline mb-3">{% if section == 'edit' %}Edit Record{% elif section == 'add' %}Add Sentence{% endif %}</h3> <a class="btn btn-primary float-right" href="{% url 'crime_records:crime_list' %}">Back</a>
         <hr>
-        <form id="add-record-form" class="mb-4" enctype="multipart/form-data" action="." method="post">
+        <form id="add-record-form" class="mb-4" enctype="multipart/form-data" action="{% if section == 'edit' %}.{% elif section == 'add' %}{% url 'crime_records:add_sentence' record.id %}{% endif %}" method="post">
               {% csrf_token %}
-              {{ edit_record_form.as_p }}
+              {{ main_form.as_p }}
               <button type="submit" class="btn btn-success">Save</button>
         </form>
     </div>
