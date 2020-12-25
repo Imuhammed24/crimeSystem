@@ -63,9 +63,9 @@ def add_sentence_view(request, record_id):
     if request.method == 'POST':
         sentencing_info_form = SentencingInfoForm(data=request.POST, files=request.FILES or None)
         if sentencing_info_form.is_valid():
-            sentencing_info_form.save(commit=False)
-            sentencing_info_form.criminal = record
-            sentencing_info_form.save()
+            form = sentencing_info_form.save(commit=False)
+            form.criminal = record
+            form.save()
             messages.success(request, "Added Successfully!")
             return redirect('crime_records:crime_detail', record_id)
     context = {
