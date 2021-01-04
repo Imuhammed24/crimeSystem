@@ -42,36 +42,39 @@
                     <table id="user-profile-table" class="table">
                       <tbody>
                         <tr>
-                          <td><span class="user-detail-span"> <small class="d-inline">First Name: </small> <strong class="table-title-space">{{record.first_name.upper}}</strong></span></td>
-                          <td><span class="user-detail-span"> <small class="d-inline">Other Names: </small> <strong class="table-title-space">{{record.last_name.title}} {{record.middle_name.title}}</strong></span></td>
-                          <td><span></span></td>
+                          <td><span class="user-detail-span"> <small class="d-inline">First Name: </small> <strong class="table-title-space">{{record.first_name.upper}} {{record.last_name.title}} {{record.middle_name.title}}</strong></span></td>
+                          <td><span class="mr-5"></span></td>
+                          <td><span class="user-detail-span"> <small class="d-inline">Address: </small> <strong class="table-title-space">{{record.address}}</strong></span></td>
+
                         </tr>
                       </tbody>
                       <tbody>
                         <tr>
                           <td><span class="user-detail-span"> <small class="d-inline">Date of Birth: </small> <strong class="table-title-space">{{record.date_of_birth}}</strong></span></td>
-                          <td><span class="user-detail-span"> <small class="d-inline">Age: </small> <strong class="table-title-space">---</strong></span></td>
                           <td></td>
+                          <td><span class="user-detail-span"> <small class="d-inline">Age: </small> <strong class="table-title-space">---</strong></span></td>
+
                         </tr>
                         <tr>
                           <td><span> <small class="user-detail-span d-inline">State: </small> <strong class="table-title-space">{{record.state_of_origin.title}}</strong></span></td>
-                          <td><span class="user-detail-span"> <small class="user-detail-span d-inline">Nationality: </small> <strong class="table-title-space">{{record.nationality.title}}</strong></span></td>
                           <td></td>
+                          <td><span class="user-detail-span"> <small class="user-detail-span d-inline">Nationality: </small> <strong class="table-title-space">{{record.nationality.title}}</strong></span></td>
                         </tr>
                         <tr>
                           <td><span><small class="user-detail-span d-inline">Hair Colour: </small> <strong class="table-title-space">{{record.hair_colour}}</strong></span></td>
+                          <td></td>
                           <td><span><small class="user-detail-span d-inline">Eye Colour: </small> <strong class="table-title-space">{{record.eye_colour}}</strong></span></td>
                           <td></td>
                         </tr>
                         <tr>
                           <td><span><small class="user-detail-span d-inline">Gender: </small> <strong class="table-title-space">{{record.sex}}</strong></span></td>
-                          <td><span><small class="user-detail-span d-inline">Marital Status: </small> <strong class="table-title-space">{{record.marital}}</strong></span></td>
                           <td></td>
+                          <td><span><small class="user-detail-span d-inline">Marital Status: </small> <strong class="table-title-space">{{record.marital}}</strong></span></td>
                         </tr>
                         <tr>
                           <td><span><small class="user-detail-span d-inline">Height: </small> <strong class="table-title-space">{{record.height}}</strong></span></td>
+                          <td class="mr-5"></td>
                           <td><span><small class="user-detail-span d-inline">Weight: </small> <strong class="table-title-space">{{record.weight}}</strong></span></td>
-                          <td></td>
                         </tr>
                       </tbody>
                     </table>
@@ -92,6 +95,9 @@
                           <th scope="col">Entity (offended)</th>
                           <th scope="col">Charge</th>
                           <th scope="col">Term</th>
+                            {% if request.user.is_staff %}
+                          <th scope="col">Action</th>
+                            {% endif %}
                         </tr>
                       </thead>
                       <tbody>
@@ -102,6 +108,9 @@
                           <td>{{ case.entity }}</td>
                           <td>{{ case.charge }}</td>
                           <td>{{ case.term }}</td>
+                            {% if request.user.is_staff %}
+                          <td><a onclick="if (! confirm('Do you want to delete this record?')) { return false; }" class="btn btn-danger" href="">Delete</a></td>
+                            {% endif %}
                             {% empty %}
                           <td colspan="5"><center>No record yet</center></td>
                         </tr>
