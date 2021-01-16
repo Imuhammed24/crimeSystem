@@ -1,0 +1,218 @@
+[
+{
+  "model": "crime_records.crimerecord",
+  "pk": 5,
+  "fields": {
+    "first_name": "Isah",
+    "last_name": "Mugulisu",
+    "middle_name": "Adha",
+    "passport": "offenders_images/pasport6_bBo339V.jpe",
+    "date_of_birth": "2020-12-21",
+    "state_of_origin": "Ibadan",
+    "nationality": "Nigeria",
+    "BVN": "1111111111",
+    "address": null,
+    "sex": null,
+    "marital": null,
+    "eye_colour": null,
+    "hair_colour": null,
+    "height": null,
+    "weight": null,
+    "extra_note": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+    "modified": "2020-12-23T09:15:31.513Z",
+    "created": "2020-12-21T14:52:16.724Z"
+  }
+},
+{
+  "model": "crime_records.crimerecord",
+  "pk": 8,
+  "fields": {
+    "first_name": "Bola",
+    "last_name": "Tolu",
+    "middle_name": "Ladipo",
+    "passport": "offenders_images/pasport4.jpg",
+    "date_of_birth": "2020-12-23",
+    "state_of_origin": "Lagos",
+    "nationality": "Nigeria",
+    "BVN": "1234567890",
+    "address": null,
+    "sex": null,
+    "marital": null,
+    "eye_colour": null,
+    "hair_colour": null,
+    "height": null,
+    "weight": null,
+    "extra_note": "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "modified": "2020-12-23T09:08:19.447Z",
+    "created": "2020-12-23T06:42:02.263Z"
+  }
+},
+{
+  "model": "crime_records.crimerecord",
+  "pk": 9,
+  "fields": {
+    "first_name": "Ollap",
+    "last_name": "Isham",
+    "middle_name": "TEJIRI",
+    "passport": "offenders_images/pasport5.jpg",
+    "date_of_birth": "2020-12-23",
+    "state_of_origin": "kogi",
+    "nationality": "Nigeria",
+    "BVN": "2220000000",
+    "address": "51 Ajakaye street, Magongo, Ikorodu, Lagos.",
+    "sex": "male",
+    "marital": "married",
+    "eye_colour": "white",
+    "hair_colour": "black",
+    "height": 6.0,
+    "weight": 40.0,
+    "extra_note": "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "modified": "2020-12-24T16:34:47.144Z",
+    "created": "2020-12-23T06:43:21.552Z"
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 1,
+  "fields": {
+    "date": "2020-12-24",
+    "offence": "Murder",
+    "entity": "Mr Ade",
+    "charge": "Death",
+    "term": null,
+    "criminal": 9
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 2,
+  "fields": {
+    "date": "2020-12-22",
+    "offence": "Car Theft",
+    "entity": "Mr Bolu",
+    "charge": "NGN 10M and Sentence",
+    "term": "10 Months",
+    "criminal": 9
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 3,
+  "fields": {
+    "date": "1987-06-11",
+    "offence": "Phone theft",
+    "entity": "Mr Ayo",
+    "charge": "Jail",
+    "term": "10 months",
+    "criminal": null
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 4,
+  "fields": {
+    "date": "1999-06-19",
+    "offence": "Phone theft",
+    "entity": "Mr sola",
+    "charge": "jail",
+    "term": "10 years",
+    "criminal": null
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 5,
+  "fields": {
+    "date": "1999-01-06",
+    "offence": "phone theft",
+    "entity": "mr olu",
+    "charge": "jail",
+    "term": "10 months",
+    "criminal": null
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 6,
+  "fields": {
+    "date": "1999-09-09",
+    "offence": "j",
+    "entity": "j",
+    "charge": "j",
+    "term": "j",
+    "criminal": null
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 7,
+  "fields": {
+    "date": "1999-09-09",
+    "offence": "o",
+    "entity": "o",
+    "charge": "o",
+    "term": "o",
+    "criminal": null
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 8,
+  "fields": {
+    "date": "1999-09-09",
+    "offence": "ui",
+    "entity": "uiu",
+    "charge": "ui",
+    "term": "ui",
+    "criminal": null
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 9,
+  "fields": {
+    "date": "1999-09-09",
+    "offence": "oi",
+    "entity": "oi",
+    "charge": "oo",
+    "term": "o",
+    "criminal": null
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 10,
+  "fields": {
+    "date": "1999-01-01",
+    "offence": "r",
+    "entity": "r",
+    "charge": "r",
+    "term": "r",
+    "criminal": null
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 11,
+  "fields": {
+    "date": "1999-01-01",
+    "offence": "uUuuuu",
+    "entity": "u",
+    "charge": "iiii",
+    "term": "ii",
+    "criminal": null
+  }
+},
+{
+  "model": "crime_records.sentencinginfo",
+  "pk": 12,
+  "fields": {
+    "date": "1999-01-01",
+    "offence": "u",
+    "entity": "u",
+    "charge": "u",
+    "term": "u",
+    "criminal": 8
+  }
+}
+]

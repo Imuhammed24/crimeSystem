@@ -1,0 +1,20 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$XzgNAP0uZ6Lg$G1Olvgp8nEDR/CASw2MQUDmO3Zqx+Rlnzks6+DAaRjs=",
+    "last_login": "2020-12-30T21:05:42.710Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "ishaqmuhammed191@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-12-21T14:42:41.161Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
