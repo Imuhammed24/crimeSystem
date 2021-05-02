@@ -61,7 +61,6 @@ openpyxl==3.0.7
 packaging==20.9
 paramiko==2.7.2
 Pillow==8.2.0
-pkg-resources==0.0.0
 psycopg2==2.8.6
 pycosat==0.6.3
 pycparser==2.20
