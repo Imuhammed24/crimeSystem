@@ -13,6 +13,7 @@
               <th scope="col">BVN</th>
               <th scope="col">Date_Added</th>
               <th scope="col">Last_Modified</th>
+              <th scope="col">Read_More</th>
               {% if request.user.is_staff %}
               <th scope="col">Edit</th>
               <th scope="col">Delete</th>
@@ -26,13 +27,14 @@
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.first_name}}</a></td>
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.last_name}}</a></td>
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.middle_name}}</a></td>
-              <td><a class="text-primary" href="{{record.passport.url}}">Click to open</a></td>
+              <td><a class="btn btn-primary" href="{{record.passport.url}}">Click to open</a></td>
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.date_of_birth}}</a></td>
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.state_of_origin}}</a></td>
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.nationality}}</a></td>
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.BVN}}</a></td>
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.created}}</a></td>
               <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="text-white">{{record.modified}}</a></td>
+              <td><a href="{% url 'crime_records:crime_detail' record.id %}" class="btn btn-primary">Detailed</a></td>
               {% if request.user.is_staff %}
               <td><a href="{% url 'crime_records:edit_crime_record' record.id %}" class="btn btn-primary">edit</a></td>
               <td><a href="{% url 'crime_records:delete_crime_record' record.id %}" onclick="if (! confirm('Do you want to delete this record?')) { return false; }" class="btn btn-danger">delete</a></td>

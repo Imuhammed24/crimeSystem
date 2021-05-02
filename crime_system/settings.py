@@ -85,8 +85,8 @@ DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'crime_system',
-            'USER': 'postgres',
-            'PASSWORD': '12345',
+            'USER': 'muhammed',
+            'PASSWORD': 'password',
             'HOST': 'localhost',
             'PORT': '5432',
         }

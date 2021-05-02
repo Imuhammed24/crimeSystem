@@ -62,12 +62,12 @@
     };
 </script>
 {% endblock %}
-
 {% block html_body_content %}
+
 {% include 'header.html' %}
 
 <section class="d-block overflow-hidden">
-    <div class="content-div" id="left-div"> `</div>
+<!--    <div class="content-div" id="left-div"> `</div>-->
     <div class="content-div" id="middle-div">
 <!--        <center>-->
             <form id="search-form" action="{% url 'searches:search_view' %}">
@@ -79,9 +79,8 @@
             </form>
 <!--        </center>-->
     </div>
-    <div class="content-div" id="right-div"> </div>
+<!--    <div class="content-div" id="right-div"> </div>-->
 </section>
 
-{% include 'footer.html' %}
 
 {% endblock %}

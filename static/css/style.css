@@ -6,9 +6,9 @@ h1,h2,h3,h4,h5,h6,p,a,small{
     height: 10vh;
     background-color: black;
     color: white;
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
     overflow: hidden;
-    border-radius: 0 0 0 50px;
+    /*border-radius: 0 0 0 50px;*/
 }
 
 #nav-bar-ul{
@@ -22,26 +22,24 @@ h1,h2,h3,h4,h5,h6,p,a,small{
 }
 
 #middle-div{
-    display: inline;
     width: 80%;
     margin: 0 auto;
 }
 
-#left-div, #right-div{
-    width: 10%;
-}
+/*#left-div, #right-div{*/
+/*    width: 10%;*/
+/*}*/
 
 .content-div{
-    display: inline;
-    float: left;
-    height: 82vh;
-    overflow: scroll;
+    /*padding: 20px 20px 40px 20px;*/
+    /*overflow-y: scroll;*/
+    /*height: 90vh;*/
 }
 
 .content-div-explore{
     display: block;
     overflow: scroll;
-    height: 82vh;
+    height: 90vh;
 }
 
 #search-bar{
@@ -94,7 +92,7 @@ h1,h2,h3,h4,h5,h6,p,a,small{
 #record-table{
     /*width: 90%;*/
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 #record-table thead tr th{
@@ -197,7 +195,12 @@ div.description_p{
     display: block;
 }
 
-#sentence-info{
+#sentence-info, #offender-case-section{
     padding: 0 25px;
+}
+
+#add-record-form li{
+    list-style-type: none;
+    margin-bottom: 7px;
 }
 

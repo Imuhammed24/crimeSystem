@@ -7,11 +7,40 @@
     <h3 class="d-inline font-weight-bold">Crime Record System</h3>
     {% endif %}
     <ul id="nav-bar-ul" class="m-0">
-        <li class="list-unstyled d-inline font-weight-bold text-white-50 mr-4">Hello, {{request.user.username.title}}</li>
+        <li class="list-unstyled d-inline font-weight-bold text-white-50 mr-4">Hello {{request.user.username.title}}!</li>
         <li class="list-unstyled d-inline mr-2"><a {% if request.user.is_authenticated %} href="{% url 'account:home' %}" {% else%} href="/" {% endif %} class="text-white">Home</a></li>
         <li class="list-unstyled d-inline mr-2 text-white"><a href="{% url 'crime_records:crime_list' %}" class="text-white">Explore</a></li>
 <!--        <li class="list-unstyled d-inline"><a href="{% url 'account:logout' %}" class="text-white">logout</a></li>-->
         <li class="list-unstyled d-inline"><button type="button" data-toggle="modal" data-target="#exampleModalLong" class="text-white btn btn-secondary">Add Record</a></li>
+        {% if request.user.is_authenticated %}
+        <li class="list-unstyled d-inline mr-2 text-white"><a href="{% url 'account:logout' %}" class="text-white btn btn-secondary">Logout</a></li>
+        {% endif %}
     </ul>
     <!-- Modal -->
 </header>
+
+
+<!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Add Crime Record</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form id="add-record-form" enctype="multipart/form-data" action="{% url 'crime_records:add_crime_record' %}" method="post">
+                  {% csrf_token %}
+                  {{ add_record_form.as_p }}
+                  <button type="submit" class="btn btn-success">Save</button>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
