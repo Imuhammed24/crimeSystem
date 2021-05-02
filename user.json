@@ -3,16 +3,34 @@
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$216000$XzgNAP0uZ6Lg$G1Olvgp8nEDR/CASw2MQUDmO3Zqx+Rlnzks6+DAaRjs=",
-    "last_login": "2020-12-30T21:05:42.710Z",
+    "password": "pbkdf2_sha256$216000$e159AprLTIvL$dbNnQj6n/mQ7T3X/RIvU6SaleKlf8o9uGS1FiPgb6YY=",
+    "last_login": "2021-05-02T15:54:12.023Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
     "last_name": "",
-    "email": "ishaqmuhammed191@gmail.com",
+    "email": "im@gm.com",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2020-12-21T14:42:41.161Z",
+    "date_joined": "2021-04-30T13:43:05.457Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$SD03lNE5tWex$3rIdvTFwQq1iXh5oRYvVPwZHxtgaUAfTblATbJv04F4=",
+    "last_login": "2021-04-30T14:00:16Z",
+    "is_superuser": false,
+    "username": "officer1",
+    "first_name": "Ishaq",
+    "last_name": "Muhammed",
+    "email": "ishaqmuhammed011@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-30T13:58:50Z",
     "groups": [],
     "user_permissions": []
   }
